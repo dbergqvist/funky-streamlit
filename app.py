@@ -20,11 +20,11 @@ if uploaded_file is not None:
     st.write(df.describe())
     st.header("Years 1970 - 1979")
     st.write(df[df["year"].between(1970, 1979)])
-    df_filter = df[df["year"].between(1970, 1979)]
+    df = df[df["year"].between(1970, 1979)]
     # plot the data
     st.header("Plot of the data")
     fig, ax = plt.subplots(1, 1)
-    ax.scatter(x=df_filter["year"], y=df_filter["danceability"])
+    ax.scatter(x=df["year"], y=df["danceability"])
     ax.set_xlabel("Year")
     ax.set_ylabel("Danceability")
     st.pyplot(fig)
