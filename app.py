@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 st.title("Funkiest decade")
 
 # Text
-st.text("This app explores the funkiness of the decades")
+st.text("This app explores the funkinesst year of the funkiest decade")
 
 # Create a file uploader and display the file name
 uploaded_file = st.file_uploader("Choose a funky file!")
