@@ -28,19 +28,21 @@ if uploaded_file is not None:
     ax.set_xlabel("Year")
     ax.set_ylabel("Danceability")
     st.pyplot(fig)
-    # Create a line chart  of the average danceability per year
+    # create a line chart of the average danceability per year
     st.header("Average danceability per year")
     fig, ax = plt.subplots(1, 1)
-    # insert range slider for the x-axis
+    # insert a range slider for the x-axis
     year_range = st.slider(
         "Select a range of years", min_value=1970, max_value=1979, value=(1970, 1979)
     )
+    # filter the dataframe based on the range slider
     df = df[df["year"].between(year_range[0], year_range[1])]
+    # plot the data
     ax.plot(df.groupby("year")["danceability"].mean())
     ax.set_xlabel("Year")
     ax.set_ylabel("Average danceability")
     st.pyplot(fig)
-    # Create a bar chart of the average danceability per year
+    # create a bar chart of the average danceability per year
     st.header("Average danceability per year")
     fig, ax = plt.subplots(1, 1)
     ax.bar(
